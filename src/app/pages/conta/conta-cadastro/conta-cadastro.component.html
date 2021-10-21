@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-header>
+        <h3>Cadastro de Conta</h3>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form" fxLayout="column">
+            <mat-form-field>
+                <input matInput placeholder="Código" readonly formControlName="id">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Descrição" readonly formControlName="descricao">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Categoria</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let cat of categorias" [value]="cat">
+                    {{cat.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="number" placeholder="Valor" formControlName="valor">
+            </mat-form-field>
+            <mat-form-field color="primary" >
+                <mat-label>Data Vencimento</mat-label>
+                <input matInput [matDatepicker]="pickerVencimento" formControlName="dataVencimento">
+                <mat-datepicker-toggle matSuffix [for]="pickerVencimento"></mat-datepicker-toggle>
+                <mat-datepicker #pickerVencimento></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field color="primary" >
+                <mat-label>Data Pagamento</mat-label>
+                <input matInput [matDatepicker]="pickerPagamento" formControlName="dataPagamento">
+                <mat-datepicker-toggle matSuffix [for]="pickerPagamento"></mat-datepicker-toggle>
+                <mat-datepicker #pickerPagamento></mat-datepicker>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="salvar()">Salvar</button>
+    </mat-card-actions>
+</mat-card>
