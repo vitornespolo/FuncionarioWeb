@@ -1,4 +1,4 @@
 export class AbstractEntity {
     
-    public id:number;
+    public codigo:number;
 }

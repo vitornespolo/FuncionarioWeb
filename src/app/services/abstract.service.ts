@@ -5,7 +5,7 @@ import { environment } from './../../environments/environment';
 @Injectable()
 export abstract class AbstractService {
 
-    protected webContext:string = 'Financeiro/rest';
+    protected webContext:string = 'Funcionario/rest';
 
     constructor(protected http:HttpClient){
 
