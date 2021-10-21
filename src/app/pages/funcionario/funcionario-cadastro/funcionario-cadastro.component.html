@@ -7,13 +7,16 @@
     <mat-card-content>
         <form [formGroup]="form" fxLayout="column">
             <mat-form-field>
-                <input matInput placeholder="Nome" formControlName="nome" type="text">
+                <input matInput placeholder="Nome" formControlName="nome" type="text" minlength="2" maxlength="30">
+                <mat-error *ngIf="form.controls['nome'].invalid">Campo Invalido(minimo de 2 caracteres e max. de 30)</mat-error>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="SobreNome" formControlName="sobreNome" type="text">
+                <input matInput placeholder="SobreNome" formControlName="sobreNome" type="text" minlength="2" maxlength="50">
+                <mat-error *ngIf="form.controls['sobreNome'].invalid">Campo Invalido(minimo de 2 caracteres e max. de 50)</mat-error>
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="Email" formControlName="email" type="text">
+                <mat-error *ngIf="form.controls['email'].invalid">Campo Invalido</mat-error>
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="PIS" formControlName="pis" type="number">

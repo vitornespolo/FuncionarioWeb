@@ -8,16 +8,19 @@
                 <mat-form-field>
                     <input matInput placeholder="Pesquisar" formControlName="pesquisa">
                 </mat-form-field>
-                <button mat-raised-button (click)="pesquisar()">Pesquisar</button>
-                <button mat-raised-button (click)="novo()">Novo</button>
+                <!-- <button mat-stroked-button color="primary" (click)="pesquisar()">Pesquisar</button> -->
+                <button mat-icon-button (click)="pesquisar()">
+                    <mat-icon>search</mat-icon>
+                </button>
             </form>
+            <button mat-stroked-button color="primary" (click)="novo()">Novo</button>
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="codigo">
                 <th mat-header-cell *matHeaderCellDef> Código </th>
-                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
             </ng-container>
             <ng-container matColumnDef="nome">
                 <th mat-header-cell *matHeaderCellDef> Nome </th>
@@ -39,7 +42,10 @@
                 <th mat-header-cell *matHeaderCellDef> Ações </th>
                 <td mat-cell *matCellDef="let element"> 
                     <button mat-raised-button color="primary" (click)="alterar(element)">Alterar</button>
-                    <button mat-raised-button color="secondary" (click)="remover(element)">Remover</button>
+                    <!-- <button mat-raised-button color="secondary" (click)="remover(element)">Remover</button> -->
+                    <button mat-icon-button (click)="remover(element)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
                 </td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -17,6 +17,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import {MatIconModule} from '@angular/material/icon';
 import { FuncionarioCadastroComponent } from './pages/funcionario/funcionario-cadastro/funcionario-cadastro.component';
 import { FuncionarioPesquisaComponent } from './pages/funcionario/funcionario-pesquisa/funcionario-pesquisa.component';
 @NgModule({
@@ -42,7 +43,8 @@ import { FuncionarioPesquisaComponent } from './pages/funcionario/funcionario-pe
     FlexLayoutModule,
     MatTableModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
