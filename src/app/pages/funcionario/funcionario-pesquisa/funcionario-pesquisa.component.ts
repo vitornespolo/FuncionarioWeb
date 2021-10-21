@@ -16,7 +16,7 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class FuncionarioPesquisaComponent implements OnInit {
   public funcionarios:Funcionario[] = [];
   public dataSource:MatTableDataSource<Funcionario> = new MatTableDataSource(this.funcionarios);
-  public displayedColumns:string[] = ['codigo','nome','sobreNome','emmail','pis','acoes'] ;
+  public displayedColumns:string[] = ['codigo','nome','sobreNome','email','pis','acoes'] ;
   public form:FormGroup = new FormGroup({
     pesquisa:new FormControl('')
   });
