@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AbstractService } from './abstract.service'; 
 import { Observable } from 'rxjs';
-import { funcionario } from '../models/funcionario';
+import { Funcionario } from '../models/funcionario';
 
 @Injectable()
 export class FuncionarioService extends AbstractService {
@@ -19,19 +19,19 @@ export class FuncionarioService extends AbstractService {
      * serviço para salvar funcionario no servidor
      * @param funcionario > objecto que representa a tabela
      */
-    public salvar(funcionario:funcionario):Observable<funcionario>{
-        return this.http.post<funcionario>(this.getUrl('salvar'),funcionario);
+    public salvar(funcionario:Funcionario):Observable<Funcionario>{
+        return this.http.post<Funcionario>(this.getUrl('salvar'),funcionario);
     }
 
-    public pesquisar(nome):Observable<Array<funcionario>>{
-        return this.http.post<Array<funcionario>>(this.getUrl('nome'),nome);
+    public pesquisar(nome:any):Observable<Array<Funcionario>>{
+        return this.http.post<Array<Funcionario>>(this.getUrl('nome'),nome);
     }
 
-    public buscarPorId(codigo):Observable<funcionario>{
-        return this.http.get<funcionario>(this.getUrl(`/${codigo}`));
+    public buscarPorId(codigo:any):Observable<Funcionario>{
+        return this.http.get<Funcionario>(this.getUrl(`/${codigo}`));
     }
 
-    public excluir(codigo):Observable<any>{
+    public excluir(codigo:any):Observable<any>{
         return this.http.delete(this.getUrl(`/${codigo}`));
     }
 }

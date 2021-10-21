@@ -13,7 +13,7 @@ export abstract class AbstractService {
 
     public abstract getPath():string;
 
-    public getUrl(pathEnd){
+    public getUrl(pathEnd:any){
         return environment.url + this.webContext + '/' +this.getPath()+"/"+ pathEnd;
     }
 }

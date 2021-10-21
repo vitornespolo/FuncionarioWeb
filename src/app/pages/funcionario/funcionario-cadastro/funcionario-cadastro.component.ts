@@ -1,11 +1,11 @@
-import { funcionario } from '../../../models/funcionario';
+import { Funcionario } from '../../../models/funcionario';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormControlName, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FuncionarioService } from 'src/app/services/usuario.service';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
-  selector: 'app-usuario-cadastro',
+  selector: 'app-funcionario-cadastro',
   templateUrl: './funcionario-cadastro.component.html',
   styleUrls: ['./funcionario-cadastro.component.scss'],
   providers:[
@@ -14,19 +14,19 @@ import { FuncionarioService } from 'src/app/services/usuario.service';
 })
 export class FuncionarioCadastroComponent implements OnInit {
 
-  public funcionario:funcionario = new funcionario();
+  public funcionario:Funcionario = new Funcionario();
   public form:FormGroup = new FormGroup({
     codigo:new FormControl(),
     nome:new FormControl(''),
-    sobrenome: new FormControl(),
-    email:new FormControl(),
+    sobreNome: new FormControl(''),
+    email:new FormControl(''),
     pis:new FormControl()    
   })
   constructor(private route:ActivatedRoute,private router:Router, private funcionarioService:FuncionarioService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params)=>{
-      this.funcionario = params as funcionario;
+      this.funcionario = params as Funcionario;
       this.form.patchValue(this.funcionario);
     })
   }

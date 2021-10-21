@@ -9,16 +9,16 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { FuncionarioCadastroComponent } from './pages/usuario/funcionario-cadastro/funcionario-cadastro.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
-//import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
-import { FuncionarioPesquisaComponent } from './pages/usuario/funcionario-pesquisa/funcionario-pesquisa.component';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { FuncionarioCadastroComponent } from './pages/funcionario/funcionario-cadastro/funcionario-cadastro.component';
+import { FuncionarioPesquisaComponent } from './pages/funcionario/funcionario-pesquisa/funcionario-pesquisa.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatDatepickerModule,
     MatToolbarModule,
     MatMenuModule,
-  //FlexLayoutModule,
+    FlexLayoutModule,
     MatTableModule,
     AppRoutingModule,
     BrowserAnimationsModule

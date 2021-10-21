@@ -1,12 +1,12 @@
-import { funcionario } from '../../../models/funcionario';
+import { Funcionario } from '../../../models/funcionario';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
-import { FuncionarioService } from 'src/app/services/usuario.service';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
-  selector: 'app-usuario-pesquisa',
+  selector: 'app-funcionario-pesquisa',
   templateUrl: './funcionario-pesquisa.component.html',
   styleUrls: ['./funcionario-pesquisa.component.scss'],
   providers:[
@@ -14,9 +14,9 @@ import { FuncionarioService } from 'src/app/services/usuario.service';
   ]
 })
 export class FuncionarioPesquisaComponent implements OnInit {
-  public funcionarios:funcionario[] = [];
-  public dataSource:MatTableDataSource<funcionario> = new MatTableDataSource(this.funcionarios);
-  public displayedColumns:string[] = ['codigo','nome','sobrenome','emmail','pis','acoes'] ;
+  public funcionarios:Funcionario[] = [];
+  public dataSource:MatTableDataSource<Funcionario> = new MatTableDataSource(this.funcionarios);
+  public displayedColumns:string[] = ['codigo','nome','sobreNome','emmail','pis','acoes'] ;
   public form:FormGroup = new FormGroup({
     pesquisa:new FormControl('')
   });
@@ -32,7 +32,7 @@ export class FuncionarioPesquisaComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.funcionarios);
     });
   }
-  public remover(funcionario){
+  public remover(funcionario:any){
     this.funcionarioService.excluir(funcionario.codigo).subscribe((res)=>{
       console.log('Removendo o funcionario',funcionario)
       let index = this.funcionarios.indexOf(funcionario);
@@ -40,9 +40,9 @@ export class FuncionarioPesquisaComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.funcionarios);
     });    
   }
-  public alterar(funcionario){
+  public alterar(funcionario:any){
     console.log('Alterando o funcionario',funcionario)
-    this.router.navigate(['/usuario/cadastro', funcionario]); 
+    this.router.navigate(['/funcionario/cadastro', funcionario]); 
   }
   public novo(){
     this.router.navigate(['/funcionario/cadastro']); 
