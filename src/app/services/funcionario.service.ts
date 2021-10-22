@@ -28,10 +28,10 @@ export class FuncionarioService extends AbstractService {
     }
 
     public buscarPorId(codigo:any):Observable<Funcionario>{
-        return this.http.get<Funcionario>(this.getUrl(`/${codigo}`));
+        return this.http.get<Funcionario>(this.getUrl(`${codigo}`));
     }
 
     public excluir(codigo:any):Observable<any>{
-        return this.http.delete(this.getUrl(`/${codigo}`));
+        return this.http.delete(this.getUrl(`${codigo}`));
     }
 }
