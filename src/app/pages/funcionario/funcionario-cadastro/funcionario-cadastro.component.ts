@@ -44,10 +44,4 @@ export class FuncionarioCadastroComponent implements OnInit {
     });
   }
 
-  // getErrorMessage() {
-  //   if (this.email.hasError('required')) {
-  //     return 'You must enter a value';
-  //   }
-  // }
-
 }
